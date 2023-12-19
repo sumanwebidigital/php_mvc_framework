@@ -1,0 +1,17 @@
+{
+    "name": "suman_neupane/php_mvc_framework",
+    "authors": [
+        {
+            "name": "Suman Neupane",
+            "email": "suman.neupane@webo.digital"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
