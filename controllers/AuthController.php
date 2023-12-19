@@ -1,6 +1,8 @@
 <?php
     namespace  app\controllers;
-    use app\core\Controller;
+
+use app\core\Application;
+use app\core\Controller;
     use app\core\Request;
     use app\models\User;
 
@@ -16,8 +18,11 @@
                 $user->loadData($request->getBody()); 
 
                 if($user->validate() && $user->save()){
-                    return "Success";
+                    Application::$app->session->setFlash('success', 'Thanks for registering');
+                    Application::$app->response->redirect('/');
+                    exit;
                 }
+
 
                 return $this->render('register', [
                     'model' => $user
